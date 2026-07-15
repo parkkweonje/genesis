@@ -31,19 +31,21 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="/genesis/css/style.css" />
+  <link rel="icon" href="/genesis/assets/favicon.svg" type="image/svg+xml" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{TITLE}}" />
   <meta property="og:description" content="{{DESCRIPTION}}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://parkkweonje.github.io/genesis/posts/{{SLUG}}/" />
-  <!-- 대표 이미지 추가 예정: /genesis/assets/og-{{SLUG}}.png 로 교체 -->
-  <meta property="og:image" content="/genesis/assets/og-default.png" />
+  <!-- 대표 이미지는 항상 절대 URL로. 글 전용 이미지가 있으면
+       https://parkkweonje.github.io/genesis/assets/og-{{SLUG}}.png 로 교체 -->
+  <meta property="og:image" content="https://parkkweonje.github.io/genesis/assets/og-default.png" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{TITLE}}" />
   <meta name="twitter:description" content="{{DESCRIPTION}}" />
-  <meta name="twitter:image" content="/genesis/assets/og-default.png" />
+  <meta name="twitter:image" content="https://parkkweonje.github.io/genesis/assets/og-default.png" />
 
   <!-- JSON-LD Article -->
   <script type="application/ld+json">
