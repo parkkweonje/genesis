@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://parkkweonje.github.io/genesis/sitemap.xml

@@ -1,4 +1,4 @@
-/* 제네시스 — 공통 스크립트 */
+/* 제네시스 부업 — 공통 스크립트 */
 (function () {
   "use strict";
 
@@ -9,14 +9,20 @@
     toggle.addEventListener("click", function () {
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
     });
     // 링크 클릭 시 메뉴 닫기
     links.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") links.classList.remove("open");
+      if (e.target.tagName === "A") {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "메뉴 열기");
+      }
     });
   }
 
   // 푸터 연도 자동 표기
-  var yearEl = document.querySelector("[data-year]");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  var yearEls = document.querySelectorAll("[data-year]");
+  var y = new Date().getFullYear();
+  yearEls.forEach(function (el) { el.textContent = y; });
 })();

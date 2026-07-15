@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  아티클 템플릿 — 매일 새 글 발행 시 이 파일을 복제해 사용하세요.
+  절차: /docs/publishing-guide.md 참고
+  1) 이 파일을 posts/{slug}/index.html 로 복사
+  2) 아래 {{...}} 플레이스홀더를 모두 교체
+  3) <!-- 카테고리 --> 부분(네비 aria-current, 브레드크럼, kicker, 카테고리 링크)을
+     해당 글의 카테고리에 맞게 수정
+  4) 발행 전 SEO 체크리스트 확인
+  주의: 확정적 수익 주장 금지. 세금/법률 수치는 "공식 안내 확인" 문구 첨부.
+  ============================================================
+  {{SLUG}}        = 폴더명(영문 소문자-하이픈). 예: jikjangin-bueop-2026
+  {{CATEGORY_SLUG}} = start | online | ai | money 중 하나
+  {{CATEGORY_NAME}} = 부업 시작하기 | 온라인·재택 부업 | AI·자동화 부업 | 무자본·세금·실무
+  {{TITLE}}       = 글 제목(=H1). 타깃 키워드를 앞쪽에, 30~35자 내외
+  {{DESCRIPTION}} = 메타 설명 70~80자, 키워드 + 클릭유도
+  {{DATE}}        = 발행일(YYYY-MM-DD). 오늘 날짜 사용
+-->
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 고유 title: 타깃 키워드 앞쪽, 30~35자 내외 -->
+  <title>{{TITLE}} — 제네시스 부업</title>
+  <!-- meta description: 70~80자, 키워드 + 클릭 유도 -->
+  <meta name="description" content="{{DESCRIPTION}}" />
+
+  <link rel="canonical" href="https://parkkweonje.github.io/genesis/posts/{{SLUG}}/" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="/genesis/css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESCRIPTION}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://parkkweonje.github.io/genesis/posts/{{SLUG}}/" />
+  <!-- 대표 이미지 추가 예정: /genesis/assets/og-{{SLUG}}.png 로 교체 -->
+  <meta property="og:image" content="/genesis/assets/og-default.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{TITLE}}" />
+  <meta name="twitter:description" content="{{DESCRIPTION}}" />
+  <meta name="twitter:image" content="/genesis/assets/og-default.png" />
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITLE}}",
+    "description": "{{DESCRIPTION}}",
+    "datePublished": "{{DATE}}",
+    "dateModified": "{{DATE}}",
+    "author": { "@type": "Organization", "name": "제네시스" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "제네시스",
+      "logo": { "@type": "ImageObject", "url": "https://parkkweonje.github.io/genesis/assets/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://parkkweonje.github.io/genesis/posts/{{SLUG}}/" },
+    "image": "https://parkkweonje.github.io/genesis/assets/og-default.png"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/genesis/">
+        <span class="logo">부</span>
+        <span>제네시스 부업</span>
+      </a>
+      <nav class="nav-links" aria-label="주 메뉴">
+        <!-- 카테고리: 이 글의 카테고리에 aria-current="page" 추가 -->
+        <a href="/genesis/category/start/">부업 시작하기</a>
+        <a href="/genesis/category/online/">온라인·재택</a>
+        <a href="/genesis/category/ai/">AI·자동화</a>
+        <a href="/genesis/category/money/">무자본·세금·실무</a>
+      </nav>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <!-- 브레드크럼: 홈 > 카테고리 > 글 -->
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="/genesis/">홈</a></li>
+          <li><a href="/genesis/category/{{CATEGORY_SLUG}}/">{{CATEGORY_NAME}}</a></li>
+          <li aria-current="page">{{TITLE}}</li>
+        </ol>
+      </nav>
+    </div>
+
+    <article class="article">
+      <div class="container">
+        <header class="article-header">
+          <span class="kicker">{{CATEGORY_NAME}}</span>
+          <!-- H1 = 제목(페이지당 1개) -->
+          <h1>{{TITLE}}</h1>
+          <p class="article-meta">
+            <time datetime="{{DATE}}">{{DATE}}</time> · 제네시스
+          </p>
+        </header>
+
+        <div class="prose">
+          <!-- 첫 문단: 100자 내에 핵심(타깃) 키워드 포함, 글 요지 요약 -->
+          <p>{{INTRO_첫문단_100자내_핵심키워드포함}}</p>
+
+          <!-- 본문 구조: 논리적인 H2/H3, 표·리스트 활용 -->
+          <h2>{{H2_소제목_1}}</h2>
+          <p>{{본문}}</p>
+
+          <h3>{{H3_소제목}}</h3>
+          <ul>
+            <li>{{리스트 항목}}</li>
+          </ul>
+
+          <!-- 표 예시 (필요 시) -->
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>{{항목}}</th><th>{{설명}}</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>{{값}}</td><td>{{값}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>{{H2_소제목_2}}</h2>
+          <p>{{본문 — 내부링크 2~3개를 자연스럽게 삽입. 예: <a href="/genesis/posts/다른글-slug/">관련 글</a>}}</p>
+
+          <!-- 안내/주의 박스 (세금·법률 등은 공식 안내 확인 문구 필수) -->
+          <div class="callout">
+            <strong>참고:</strong> {{수치·제도 관련 내용은 국세청 등 공식 안내를 함께 확인하세요.}}
+          </div>
+
+          <h2>마치며</h2>
+          <p>{{요약 및 다음 행동 제안. 과장·수익 보장 표현 금지.}}</p>
+        </div>
+
+        <!-- 관련글: 같은 카테고리 또는 연관 글 2~3개 -->
+        <aside class="related" aria-label="관련 글">
+          <h2>함께 보면 좋은 글</h2>
+          <ul>
+            <li><a href="/genesis/category/{{CATEGORY_SLUG}}/">{{CATEGORY_NAME}} 더 보기</a></li>
+            <li><a href="/genesis/posts/{{관련글-slug}}/">{{관련글 제목}}</a></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="정책 및 안내">
+        <a href="/genesis/about/">소개</a>
+        <a href="/genesis/privacy/">개인정보처리방침</a>
+        <a href="/genesis/terms/">이용약관</a>
+        <a href="/genesis/contact/">문의</a>
+      </nav>
+      <span>© <span data-year>2026</span> 제네시스 부업</span>
+    </div>
+  </footer>
+
+  <script src="/genesis/js/main.js"></script>
+</body>
+</html>
