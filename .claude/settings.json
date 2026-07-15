@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/개인/**)",
+      "Edit(**/개인/**)",
+      "Write(**/개인/**)",
+      "Read(~/Desktop/개인/**)",
+      "Edit(~/Desktop/개인/**)",
+      "Write(~/Desktop/개인/**)",
+      "Read(~/바탕화면/개인/**)",
+      "Edit(~/바탕화면/개인/**)",
+      "Write(~/바탕화면/개인/**)"
+    ]
+  }
+}
